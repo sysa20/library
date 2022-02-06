@@ -1,0 +1,33 @@
+.btn-light {
+  width: 20rem;
+  background: #c8cfd6;
+  border: 2px solid #c1c9d0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 48px;
+  margin-bottom: 0.5rem;
+}
+
+.link {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.icon {
+  height: 2rem;
+}
+
+.container {
+  width: 95%;
+  height: 95%;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,27 @@
+<span class="container">
+    <app-back-button [backPage]="'./users'">
+    </app-back-button>
+    <div class="content">
+        <form [formGroup]="entityForm" *ngIf="entityForm">
+            <div class="input-label">
+                Meno:
+            </div>
+            <input name="first_name" type="text" class="form-control" formControlName="first_name"
+                [(ngModel)]="entity.first_name" (input)="entity.first_name = $event.target.value" />
+            <div class="input-label">
+                Priezvisko:
+            </div>
+            <input name="last_name" type="text" class="form-control" formControlName="last_name"
+                [(ngModel)]="entity.last_name" (input)="entity.last_name = $event.target.value" />
+            <div>
+                <button class="btn btn-light" (click)="submit($event, entity)">
+                    <a class="link">
+                        <span class="d-none d-lg-inline">
+                            Odoslať
+                        </span>
+                    </a>
+                </button>
+            </div>
+        </form>
+    </div>
+</span>

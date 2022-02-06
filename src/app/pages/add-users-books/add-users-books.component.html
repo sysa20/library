@@ -1,0 +1,17 @@
+<form [formGroup]="entityForm">
+    <select class="custom-select" formControlName="book">
+        <option [ngValue]="null">
+            Vyberte si knihu, ktorú chcete požičať
+        </option>
+        <option *ngFor="let b of books" [ngValue]="b">
+            {{ b.book_name }}
+        </option>
+    </select>
+    <button class="btn btn-light" (click)="submit()">
+        <a class="link">
+            <span class="d-none d-lg-inline">
+                Odoslať
+            </span>
+        </a>
+    </button>
+</form>
