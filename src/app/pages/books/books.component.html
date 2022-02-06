@@ -2,7 +2,8 @@
     <app-back-button [backPage]="'./home'">
     </app-back-button>
     <div class="search-content">
-        <input type="text" class="form-control search" [(ngModel)]="searchText" placeholder="Enter text to search">
+        <input type="text" class="form-control search" [(ngModel)]="searchText"
+            placeholder="Vložte text ktorý chcete vyhľadať">
     </div>
     <div class="content">
         <a class="link" [routerLink]="['./new']" role="button" ngbTooltip="New">
