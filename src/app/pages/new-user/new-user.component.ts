@@ -32,7 +32,6 @@ export class NewUserComponent implements OnInit {
     event.preventDefault();
     entity.has_lent = false;
     entity.lent_books = [];
-    console.log(entity);
     this.userService.addUser(entity);
     window.alert('Your user has been added!');
     this.router.navigate(['./users']);
