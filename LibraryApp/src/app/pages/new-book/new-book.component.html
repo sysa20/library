@@ -1,0 +1,33 @@
+<span class="container">
+    <app-back-button [backPage]="'./books'">
+    </app-back-button>
+    <div class="content">
+        <form #form="ngForm" (submit)="onSubmit(form)">
+            <input type="hidden" name="id" [value]="bookService.formData.id" />
+            <div class="input-label">
+                Meno autora:
+            </div>
+            <input name="autor_first_name" type="text" class="form-control" placeholder="Krstné meno autora"
+                [(ngModel)]="bookService.formData.autor_first_name" #autor_first_name="ngModel" />
+            <div class="input-label">
+                Priezvisko autora:
+            </div>
+            <input name="autor_last_name" type="text" class="form-control" placeholder="Priezvisko autora"
+                [(ngModel)]="bookService.formData.autor_last_name" #autor_last_name="ngModel" />
+            <div class="input-label">
+                Názov knihy:
+            </div>
+            <input name="book_name" type="text" class="form-control" placeholder="Názov knihy"
+                [(ngModel)]="bookService.formData.book_name" #book_name="ngModel" />
+            <div>
+                <button class="btn btn-light" type="submit">
+                    <a class="link">
+                        <span class="d-none d-lg-inline">
+                            Odoslať
+                        </span>
+                    </a>
+                </button>
+            </div>
+        </form>
+    </div>
+</span>
