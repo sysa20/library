@@ -3,7 +3,7 @@
         <option [ngValue]="null">
             Vyberte si knihu, ktorú chcete požičať
         </option>
-        <option *ngFor="let b of bookService.books" [ngValue]="b">
+        <option *ngFor="let b of bookService.freeBooks" [ngValue]="b">
             {{ b.book_name }}
         </option>
     </select>

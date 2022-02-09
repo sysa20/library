@@ -23,7 +23,7 @@ export class AddUsersBooksComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.bookService.getBooks();
+    this.bookService.getFreeBooks();
     this.entityForm = this.fb.group({
       book: [null]
     });

@@ -8,6 +8,7 @@ import { Book } from '../../../models/book.module';
 })
 export class BookService {
   books: Book[];
+  freeBooks: Book[];
   readonly baseUrl = 'http://localhost:5000/api/books'
   formData: Book = new Book();
 
@@ -21,6 +22,12 @@ export class BookService {
     this.http.get(this.baseUrl)
       .toPromise()
       .then(res => this.books = res as Book[])
+  }
+
+  getFreeBooks() {
+    this.http.get(this.baseUrl + "/free")
+      .toPromise()
+      .then(res => this.freeBooks = res as Book[])
   }
 
   removeBook(book: Book) {

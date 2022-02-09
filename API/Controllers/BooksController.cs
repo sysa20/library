@@ -28,6 +28,12 @@ namespace LibraryApi.Controllers
             return await _context.Book.ToListAsync();
         }
 
+        [HttpGet("free")]
+        public async Task<ActionResult<IEnumerable<Book>>> GetFreeBooks()
+        {
+            return await _context.Book.Where(e => e.user.id == null).ToListAsync();
+        }
+
         // GET: api/Books/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Book>> GetBook(long id)
