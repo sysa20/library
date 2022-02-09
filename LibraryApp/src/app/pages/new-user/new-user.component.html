@@ -2,24 +2,23 @@
     <app-back-button [backPage]="'./users'">
     </app-back-button>
     <div class="content">
-        <form [formGroup]="entityForm" *ngIf="entityForm">
+        <form #form="ngForm" (submit)="onSubmit(form)">
+            <input type="hidden" name="id" [value]="userService.formData.id" />
             <div class="input-label">
                 Meno:
             </div>
-            <input name="first_name" type="text" class="form-control" formControlName="first_name"
-                [(ngModel)]="entity.first_name" (input)="entity.first_name = $event.target.value" />
+            <input name="first_name" type="text" class="form-control" placeholder="Krstné meno"
+                [(ngModel)]="userService.formData.first_name" #first_name="ngModel" />
             <div class="input-label">
                 Priezvisko:
             </div>
-            <input name="last_name" type="text" class="form-control" formControlName="last_name"
-                [(ngModel)]="entity.last_name" (input)="entity.last_name = $event.target.value" />
+            <input name="last_name" type="text" class="form-control" placeholder="Priezvisko"
+                [(ngModel)]="userService.formData.last_name" #last_name="ngModel" />
             <div>
-                <button class="btn btn-light" (click)="submit($event, entity)">
-                    <a class="link">
-                        <span class="d-none d-lg-inline">
-                            Odoslať
-                        </span>
-                    </a>
+                <button class="btn btn-light" type="submit">
+                    <span class="d-none d-lg-inline">
+                        Odoslať
+                    </span>
                 </button>
             </div>
         </form>

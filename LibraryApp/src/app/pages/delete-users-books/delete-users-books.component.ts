@@ -12,6 +12,8 @@ import { BookService } from '@app/shared/services/book/book.service';
 })
 export class DeleteUsersBooksComponent implements OnInit {
   entityForm: FormGroup;
+
+  @Input()
   books: Book[] | undefined;
 
   @Input()
@@ -27,11 +29,10 @@ export class DeleteUsersBooksComponent implements OnInit {
     this.entityForm = this.fb.group({
       book: [null]
     });
-    this.books = this.user.lent_books;
   }
 
   submit() {
-    this.userService.getBookFromUser(this.entityForm.value.book, this.user);
+    this.userService.getBookFromUser(this.user);
     this.bookService.bookIsBack(this.entityForm.value.book);
   }
 }

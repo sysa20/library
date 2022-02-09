@@ -6,6 +6,8 @@ import { BooksComponent } from './pages/books/books.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewBookComponent } from './pages/new-book/new-book.component';
 import { NewUserComponent } from './pages/new-user/new-user.component';
+import { UserBooksComponent } from './pages/user-books/user-books.component';
+// import { UserResolver } from './pages/users/resolver/user.resolver';
 import { UsersComponent } from './pages/users/users.component';
 
 
@@ -29,6 +31,22 @@ const routes: Routes = [
     path: 'users/add-users-books',
     component: AddUsersBooksComponent,
     pathMatch: 'full',
+  },
+  {
+    path: 'users/:id',
+    // resolve: {
+    //   entity: UserResolver,
+    // },
+    component: UserBooksComponent,
+    pathMatch: 'full',
+    // children: [
+    //   {
+    //     path: '',
+    //     component: UsersBooksComponent,
+    //     pathMatch: 'full'
+    //   },
+
+    // ],
   },
   {
     path: 'books',

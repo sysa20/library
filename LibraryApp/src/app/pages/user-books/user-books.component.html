@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="list-books">
+        <ng-container *ngFor="let b of userService.lent_books" class="list-user">
+            <div>{{ b.book_name }}</div>
+        </ng-container>
+    </div>
+    <div class="delete-book">
+        <app-delete-users-books [user]="userService.user" [books]="userService.lent_books">
+        </app-delete-users-books>
+    </div>
+</div>

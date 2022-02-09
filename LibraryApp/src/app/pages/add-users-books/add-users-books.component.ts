@@ -11,28 +11,27 @@ import { UserService } from '@app/shared/services/user/user.service';
   styleUrls: ['./add-users-books.component.scss']
 })
 export class AddUsersBooksComponent implements OnInit {
-  books: Book[];
   entityForm: FormGroup;
 
   @Input()
   user: User;
 
   constructor(
-    private bookService: BookService,
+    public bookService: BookService,
     public userService: UserService,
     private fb: FormBuilder,
   ) { }
 
   ngOnInit(): void {
-    this.books = this.bookService.getBook();
+    this.bookService.getBooks();
     this.entityForm = this.fb.group({
       book: [null]
     });
   }
 
   submit() {
-    this.userService.addBookForUser(this.entityForm.value.book, this.user);
-    this.bookService.bookBorrowed(this.entityForm.value.book);
+    this.userService.addBookForUser(this.user);
+    this.bookService.bookBorrowed(this.entityForm.value.book, this.user);
   }
 
 }

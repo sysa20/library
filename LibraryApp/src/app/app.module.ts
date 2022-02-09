@@ -14,8 +14,10 @@ import { CommonModule } from '@angular/common';
 import { NewUserComponent } from './pages/new-user/new-user.component';
 import { AddUsersBooksComponent } from './pages/add-users-books/add-users-books.component';
 import { DeleteUsersBooksComponent } from './pages/delete-users-books/delete-users-books.component';
-import { SearchPipe } from './shared/pipe/search.pipe';
+import { SearchUserPipe } from './shared/pipe/search-user/search-user.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { UserBooksComponent } from './pages/user-books/user-books.component';
+import { SearchBookPipe } from './shared/pipe/search-book/search-book.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     NewUserComponent,
     AddUsersBooksComponent,
     DeleteUsersBooksComponent,
-    SearchPipe
+    SearchUserPipe,
+    UserBooksComponent,
+    SearchBookPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

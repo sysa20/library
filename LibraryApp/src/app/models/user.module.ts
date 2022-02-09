@@ -6,10 +6,7 @@ export class User {
     first_name: string;
     last_name: string;
 
-    has_lent: boolean;
-    lent_books?: Book[];
-}
+    lent_books: number;
 
-export class Users {
-    users: Users[];
+    books?: Book[];
 }

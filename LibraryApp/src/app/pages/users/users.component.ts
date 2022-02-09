@@ -8,12 +8,13 @@ import { UserService } from '../../shared/services/user/user.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-  public users = this.userService.getUsers();
   searchText = '';
 
   constructor(
-    private userService: UserService
+    public userService: UserService
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.userService.getUsers();
+  }
 }

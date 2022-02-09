@@ -5,5 +5,7 @@ export class Book {
     autor_last_name: string;
 
     book_name: string;
-    count_borrowed: number;
+
+    userid: number;
+    is_borrowed: boolean;
 }

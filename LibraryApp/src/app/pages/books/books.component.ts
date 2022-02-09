@@ -7,12 +7,15 @@ import { BookService } from '../../shared/services/book/book.service';
   styleUrls: ['./books.component.scss']
 })
 export class BooksComponent implements OnInit {
-  public books = this.bookService.getBook();
   searchText = '';
 
   constructor(
-    private bookService: BookService
-  ) { }
+    public bookService: BookService
+  ) {
 
-  ngOnInit(): void { }
+  }
+
+  ngOnInit(): void {
+    this.bookService.getBooks();
+  }
 }

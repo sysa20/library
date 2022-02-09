@@ -25,7 +25,7 @@
             </th>
         </tr>
         <div class="list-user">
-            <ng-container *ngFor="let b of books | filter: searchText" class="list-user">
+            <ng-container *ngFor="let b of bookService.books | searchBook: searchText" class="list-user">
                 <div>
                     <tr>
                         <td class="label">
